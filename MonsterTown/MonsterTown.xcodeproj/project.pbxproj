@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4BDF83A11CDFA3A20016F070 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF83A01CDFA3A20016F070 /* main.swift */; };
+		4BDF83A81CDFACCA0016F070 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF83A71CDFACCA0016F070 /* Town.swift */; };
+		4BDF83AA1CDFB0840016F070 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF83A91CDFB0840016F070 /* Monster.swift */; };
+		4BDF83AC1CDFB1FA0016F070 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF83AB1CDFB1FA0016F070 /* Zombie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		4BDF839D1CDFA3A20016F070 /* MonsterTown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MonsterTown; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF83A01CDFA3A20016F070 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4BDF83A71CDFACCA0016F070 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
+		4BDF83A91CDFB0840016F070 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		4BDF83AB1CDFB1FA0016F070 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				4BDF83A01CDFA3A20016F070 /* main.swift */,
+				4BDF83AB1CDFB1FA0016F070 /* Zombie.swift */,
+				4BDF83A91CDFB0840016F070 /* Monster.swift */,
+				4BDF83A71CDFACCA0016F070 /* Town.swift */,
 			);
 			path = MonsterTown;
 			sourceTree = "<group>";
@@ -120,6 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF83A11CDFA3A20016F070 /* main.swift in Sources */,
+				4BDF83AC1CDFB1FA0016F070 /* Zombie.swift in Sources */,
+				4BDF83AA1CDFB0840016F070 /* Monster.swift in Sources */,
+				4BDF83A81CDFACCA0016F070 /* Town.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

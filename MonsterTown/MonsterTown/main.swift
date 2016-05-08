@@ -7,6 +7,15 @@
 //
 
 import Foundation
+//declaring a variable and creating an instance of a town
+var myTown = Town()
 
-print("Hello, World!")
+//myTown.printTownDesc()
+myTown.changePopulation(500)
 
+let fredTheZombie = Zombie()
+fredTheZombie.town = myTown
+fredTheZombie.terrorizeTown()
+fredTheZombie.town?.printTownDesc()
+
+fredTheZombie.changeName("Fred the Zombie", walksWithLimp: false)
