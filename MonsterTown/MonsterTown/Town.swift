@@ -9,20 +9,45 @@
 import Foundation
 
 struct Town {
-    var population = 5422
+    static let region = "South"
+    var population = 5422 {
+        didSet(oldPopulation) {
+            print("the poplation has changed to \(population) from \(oldPopulation)")
+        }
+    }
     var numberOfStopLights = 4
-//Let Town Describe itself
+    
+    enum Size{
+        case Small
+        case Medium
+        case Large
+    }
+    
+    var townSize: Size {
+        get {
+            switch self.population {
+            case 0...10000:
+                    return Size.Small
+            case 10001...100000:
+                return Size.Medium
+            default:
+                return Size.Large
+            }
+        }
+    }
+    
+            //Let Town Describe itself
     func printTownDesc(){
         print("Population: \(self.population), number of stopLights: \(self.numberOfStopLights)")
     }
-    //create a function that Changes the towns information! if an instance method on a struct changes any of the structs properties it must be marked as mutating
-    //increase the towns instances popilation
+            //create a function that Changes the towns information! if an instance method on a struct changes any of the structs properties it must be marked as mutating
+            //increase the towns instances popilation
     mutating func changePopulation(amount: Int){
-        population += amount
+        self.population += amount
     }
 }
 
-//tthese properties are mitable because towns pop and num of stoplights are likley to change over time create an instance of Town in the main.swift file 
+            //tthese properties are mitable because towns pop and num of stoplights are likley to change over time create an instance of Town in the main.swift file
 
-//Let Town Describe itself
+            //Let Town Describe itself
 

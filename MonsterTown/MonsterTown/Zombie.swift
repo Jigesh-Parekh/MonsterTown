@@ -11,8 +11,11 @@ import Foundation
 class Zombie : Monster {
     var walksWithLimp = true
     //final prevents future subclasses from altering this zombie implementation - keeping it unique and untouched just for Zombie
+    private(set) var isFallingApart = false
     final override func terrorizeTown() {
-        town?.changePopulation(-10)
+        if !isFallingApart{
+            town?.changePopulation(-10)
+        }
         super.terrorizeTown()
             // super calls the monsters class implementation of terrorize town as it was defined
             //inherits moster properties and ovverrides terrorizetown function meaning that s subclass is providing its own definition of a method
@@ -20,5 +23,11 @@ class Zombie : Monster {
     func changeName(name: String, walksWithLimp: Bool) {
         self.name = name
         self.walksWithLimp = walksWithLimp
+    }
+    
+   
+    
+    override class var spookyNoise: String {
+        return "Brains..."
     }
 }

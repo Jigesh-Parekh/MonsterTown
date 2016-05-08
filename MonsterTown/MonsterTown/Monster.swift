@@ -11,9 +11,25 @@ import Foundation
 //Classes are like structs but are used to model related data under a common type
 
 class Monster {
+    static let isTerrifying = true
+    
+    class var spookyNoise: String {
+        return "Grr"
+    }
+    
     //monster will be defined in very general terms since types of monsters will inhereit basic properties
     var town: Town?
     var name = "Monster"
+    
+    var victimPool: Int {
+        get {
+                //using the nil coalescing operator to check wheather the monster instance has a town that it is currently terrorizinf - returns the population, if the instance has not found a town it simply returns 0
+            return town?.population ?? 0
+        }
+        set(newVictimPool){
+             town?.population = newVictimPool
+        }
+    }
     
     func terrorizeTown(){
         if town != nil {
