@@ -19,7 +19,7 @@ class Monster {
     
     //monster will be defined in very general terms since types of monsters will inhereit basic properties
     var town: Town?
-    var name = "Monster"
+    var name: String
     
     var victimPool: Int {
         get {
@@ -30,6 +30,12 @@ class Monster {
              town?.population = newVictimPool
         }
     }
+    
+    required init(town: Town?, monsterName: String) {
+        self.town = town
+        name = monsterName
+    }
+    
     
     func terrorizeTown(){
         if town != nil {

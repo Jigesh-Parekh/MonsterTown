@@ -9,9 +9,29 @@
 import Foundation
 
 class Zombie : Monster {
-    var walksWithLimp = true
+    var walksWithLimp: Bool
     //final prevents future subclasses from altering this zombie implementation - keeping it unique and untouched just for Zombie
-    private(set) var isFallingApart = false
+    private(set) var isFallingApart: Bool
+    
+    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String){
+        walksWithLimp = limp
+        isFallingApart = fallingApart
+        super.init(town: town, monsterName: monsterName)
+    }
+    
+    convenience init(limp: Bool, fallinApart: Bool) {
+        self.init(limp: limp, fallingApart: fallinApart, town: nil, monsterName: "Fred")
+        if walksWithLimp {
+            print("This Zombie has a bad knee")
+        }
+    }
+    
+    required init(town: Town?, monsterName: String) {
+        walksWithLimp = false
+        isFallingApart = false
+        super.init(town: town, monsterName: monsterName)
+    }
+    
     final override func terrorizeTown() {
         if !isFallingApart{
             town?.changePopulation(-10)
@@ -25,7 +45,9 @@ class Zombie : Monster {
         self.walksWithLimp = walksWithLimp
     }
     
-   
+    deinit{
+        print("Zombie name \(name) is no longer with us")
+    }
     
     override class var spookyNoise: String {
         return "Brains..."

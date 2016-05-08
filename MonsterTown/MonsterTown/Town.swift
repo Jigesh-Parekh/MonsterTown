@@ -9,13 +9,23 @@
 import Foundation
 
 struct Town {
-    static let region = "South"
+    let region:  String
     var population = 5422 {
         didSet(oldPopulation) {
             print("the poplation has changed to \(population) from \(oldPopulation)")
         }
     }
-    var numberOfStopLights = 4
+    var numberOfStopLights: Int
+    
+    init(region: String, population: Int, stopLights: Int) {
+        self.region = region
+        self.population = population
+        numberOfStopLights = stopLights
+    }
+    init(population: Int, stopLights: Int){
+        self.init(region: "N/A", population: population, stopLights: stopLights)
+    }
+    
     
     enum Size{
         case Small
@@ -38,7 +48,7 @@ struct Town {
     
             //Let Town Describe itself
     func printTownDesc(){
-        print("Population: \(self.population), number of stopLights: \(self.numberOfStopLights)")
+        print("Population: \(self.population), number of stopLights: \(self.numberOfStopLights); region: \(region)")
     }
             //create a function that Changes the towns information! if an instance method on a struct changes any of the structs properties it must be marked as mutating
             //increase the towns instances popilation

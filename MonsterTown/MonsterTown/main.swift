@@ -8,7 +8,8 @@
 
 import Foundation
 //declaring a variable and creating an instance of a town
-var myTown = Town()
+var myTown = Town(region: "West",population: 10000, stopLights: 6)
+myTown.printTownDesc()
 var ts = myTown.townSize
 print(ts)
 
@@ -21,13 +22,16 @@ if Zombie.isTerrifying {
     print("Zombie is Terrifying! Run Away!")
 }
 
-let fredTheZombie = Zombie()
-fredTheZombie.town = myTown
-fredTheZombie.terrorizeTown()
-fredTheZombie.town?.printTownDesc()
+var fredTheZombie: Zombie? = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
+fredTheZombie?.terrorizeTown()
+fredTheZombie?.town?.printTownDesc()
 
-fredTheZombie.changeName("Fred the Zombie", walksWithLimp: false)
+fredTheZombie?.changeName("Fred the Zombie", walksWithLimp: false)
 
-print("victim pool: \(fredTheZombie.victimPool)")
-fredTheZombie.victimPool = 500
-print("victim pool: \(fredTheZombie.victimPool)")
+var convenientZombie = Zombie(limp: true, fallinApart: false)
+
+print("victim pool: \(fredTheZombie?.victimPool)")
+fredTheZombie?.victimPool = 500
+print("victim pool: \(fredTheZombie?.victimPool)")
+
+fredTheZombie = nil 
